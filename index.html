@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+
+    <!-- Font mạnh mẽ hơn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at top, #0057b8, #00264d);
+        color: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ====== Logo HCMUE làm nền mờ ====== */
+      .bg-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        opacity: 0.06;
+        background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/HCMUE_logo.png/480px-HCMUE_logo.png")
+          no-repeat center/contain;
+        pointer-events: none;
+      }
+
+      /* ====== Khung chính ====== */
+      .container {
+        position: relative;
+        padding: 45px 30px;
+        text-align: center;
+        width: 380px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: 15px;
+        color: #dce6f2;
+        margin-bottom: 28px;
+      }
+
+      /* ====== Button dạng card mạnh mẽ ====== */
+      .btn {
+        display: block;
+        margin: 15px 0;
+        padding: 18px;
+        border-radius: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.25s;
+        border: 2px solid transparent;
+      }
+
+      .btn-cv {
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+      }
+
+      .btn-ocean {
+        background: linear-gradient(90deg, #f4c542, #f0a500);
+        color: #1a1a1a;
+      }
+
+      /* Hiệu ứng hover 3D */
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          width: 300px;
+          padding: 35px 20px;
+        }
+        h1 {
+          font-size: 22px;
+        }
+        .btn {
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-logo"></div>
+
+    <div class="container">
+      <h1>Đây là trang chủ của Trọng Quyền</h1>
+      <p>Chọn nội dung bạn muốn truy cập:</p>
+
+      <a href="BaiHoCa/index.html" class="btn btn-cv">🐟 Hồ Cá</a>
+      <a href="CVCaNhan/index.html" class="btn btn-ocean">📄 Xem CV</a>
+    </div>
+  </body>
+</html>

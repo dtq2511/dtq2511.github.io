@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>CV - Đào Trọng Quyền (Phiên bản Cá nhân)</title>
+    <style>
+      /* Định nghĩa biến màu sắc mới */
+      :root {
+        --primary-color: #003366; /* Navy Blue - Màu chính */
+        --accent-color: #00a388; /* Teal/Aqua - Màu nhấn */
+        --background-left: #e0eaf5; /* Màu nền nhẹ cho cột trái */
+        --text-color: #333;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif; /* Sử dụng font mới */
+        margin: 0 auto;
+        background: #f7f7f7;
+        color: var(--text-color);
+        line-height: 1.6;
+        max-width: 900px; /* Giới hạn để mô phỏng trang */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 0.7em;
+        color: var(--primary-color); /* Sử dụng màu chính */
+        font-weight: 600;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 0;
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+      p,
+      ul {
+        margin-top: 0;
+        margin-bottom: 1em;
+        font-size: 0.95em;
+      }
+      a {
+        color: var(--accent-color); /* Liên kết sử dụng màu nhấn */
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      hr {
+        margin: 1.5em 0;
+        border: none;
+        border-top: 1px solid #ddd;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      section {
+        margin-bottom: 2em;
+      }
+
+      /* Bố cục chính 40%/60% */
+      .main {
+        display: flex;
+        gap: 0; /* Quan trọng để duy trì tỷ lệ chính xác */
+        min-height: 100vh;
+      }
+      .left {
+        background-color: var(--background-left); /* Màu nền nhẹ mới */
+        padding: 30px 20px;
+        width: 40%; /* 40% Chiều rộng */
+        box-sizing: border-box;
+        color: #222; /* Màu chữ đậm hơn cho cột bên trái */
+      }
+      .right {
+        background-color: #fff;
+        padding: 40px;
+        width: 60%; /* 60% Chiều rộng */
+        box-sizing: border-box;
+      }
+
+      /* Điều chỉnh kiểu chữ */
+      .f-light {
+        font-weight: 300;
+      }
+      .upper {
+        text-transform: uppercase;
+      }
+      .l-space {
+        letter-spacing: 4px; /* Giảm nhẹ để dễ đọc hơn */
+        color: var(--accent-color); /* Màu nhấn cho vai trò */
+        font-weight: 400;
+      }
+
+      /* Tiêu đề */
+      h2 {
+        border-bottom: 2px solid var(--accent-color); /* Đường kẻ màu nhấn */
+        text-transform: uppercase;
+        font-size: 1.2em;
+        padding-bottom: 5px;
+        margin-top: 0;
+      }
+      .left h2 {
+        border-bottom: 2px solid var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      /* Hình ảnh & Thông tin cá nhân */
+      .name {
+        margin-bottom: 30px;
+      }
+      img {
+        border: 5px solid #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng mờ */
+      }
+      .avatar {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .avatar img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top; /* Lấy phần mặt */
+        border: 4px solid #4c8cff;
+      }
+
+      .info-item {
+        margin-bottom: 0.5em;
+      }
+
+      /* Học vấn (Education) */
+      .left section strong {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+      .left section i {
+        color: #555;
+        display: block;
+        font-style: normal;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+      }
+
+      /* Thanh tiến trình kỹ năng (Sử dụng màu mới) */
+      h3 {
+        color: var(--primary-color);
+      }
+      .load,
+      .load2,
+      .load3 {
+        background-color: #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        height: 8px; /* Chiều cao nhỏ hơn cho vẻ ngoài tinh tế */
+      }
+      .progress,
+      .progress2,
+      .progress3 {
+        text-align: right;
+        padding-right: 5px;
+        color: transparent; /* Ẩn chữ số bên trong thanh (hoặc hiển thị màu trắng nếu muốn) */
+        background-color: var(--accent-color); /* Thanh tiến trình màu nhấn */
+        border-radius: 5px;
+        height: 100%;
+        line-height: 8px;
+        display: block;
+      }
+
+      /* Kỹ năng và Kinh nghiệm */
+      .right ul li strong {
+        color: var(--primary-color);
+      }
+
+      /* Media Print cho A4 */
+      @media print {
+        body {
+          width: 210mm;
+          height: 297mm;
+          max-width: 210mm;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          font-size: 10pt;
+          color: #000;
+        }
+        .main {
+          min-height: 297mm;
+          page-break-after: always;
+        }
+        .left,
+        .right {
+          padding: 15px 20px;
+        }
+        .left {
+          background-color: #f0f5fa !important; /* Đảm bảo màu nhẹ khi in */
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+        h1,
+        h2,
+        h3,
+        .right ul li strong {
+          color: #000 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <div class="avatar">
+          <img
+            src="avt.jpg"
+            alt="Đào Trọng Quyền"
+            style="width: 120px; height: 120px; border-radius: 50%"
+          />
+        </div>
+        <section>
+          <h2>Thông tin cá nhân</h2>
+          <p class="info-item">Họ tên: Đào Trọng Quyền</p>
+          <p class="info-item">Lớp: Công nghệ thông tin C</p>
+          <p class="info-item">Trường: Đại Học Sư Phạm Thành Phố Hồ Chí Minh</p>
+          <p class="info-item">Số điện thoại: 0339851061</p>
+          <p class="info-item">Email: daotrongquyen2007@gmail.com</p>
+        </section>
+        <hr />
+
+        <section>
+          <h3>Skills</h3>
+          <p>HTML</p>
+          <div class="load">
+            <div class="progress" style="width: 80%"></div>
+          </div>
+          <p>CSS</p>
+          <div class="load2">
+            <div class="progress2" style="width: 70%"></div>
+          </div>
+          <p>Java Script</p>
+          <div class="load3">
+            <div class="progress3" style="width: 60%"></div>
+          </div>
+        </section>
+        <hr />
+
+        <section>
+          <h2>Học vấn</h2>
+          <i class="date">2025 – nay</i>
+          <div>
+            <strong>Đại Học Sư Phạm Thành Phố Hồ Chí Minh</strong>
+            <p>Ngành: Công nghệ thông tin</p>
+          </div>
+          <i class="date">2022 – 2025</i>
+          <div>
+            <strong>Trường THPT Dĩ An</strong>
+          </div>
+          <i class="date">2018 – 2022</i>
+          <div>
+            <strong>Trường THCS Bình Thắng</strong>
+          </div>
+          <i class="date">2013 - 2018</i>
+          <div>
+            <strong>Trường TH Tân Đông Hiệp</strong>
+          </div>
+        </section>
+      </div>
+      <div class="right">
+        <div class="name">
+          <h1 class="upper">Đào Trọng Quyền</h1>
+          <p class="upper f-light l-space">Lập Trình Viên</p>
+        </div>
+        <section>
+          <h2>Mục tiêu nghề nghiệp</h2>
+          <p>
+            Với nền tảng được đào tạo trong lĩnh vực Công nghệ thông tin, tôi
+            mong muốn được làm việc trong một môi trường chuyên nghiệp, năng
+            động và giàu tính đổi mới để có thể trau dồi kỹ năng lập trình cũng
+            như nâng cao tư duy logic. Mục tiêu của tôi là phát triển trở thành
+            một lập trình viên có chuyên môn vững vàng, làm chủ được quy trình
+            xây dựng và tối ưu hóa ứng dụng thực tiễn. Tôi cũng hướng tới việc
+            liên tục cập nhật công nghệ mới, mở rộng kiến thức và đóng góp tích
+            cực cho sự phát triển chung của tổ chức mà tôi tham gia.
+          </p>
+        </section>
+
+        <section>
+          <h2>Kỹ Năng Chuyên môn</h2>
+          <ul>
+            <li>
+              <strong>Ngôn ngữ lập trình:</strong> Có khả năng tiếp cận và sử
+              dụng hiệu quả nhiều ngôn ngữ lập trình như Python, Java, C++,
+              JavaScript… tùy theo định hướng công việc (Front-end, Back-end,
+              hoặc phát triển ứng dụng). Luôn sẵn sàng học thêm các công nghệ và
+              ngôn ngữ mới khi cần.
+            </li>
+            <li>
+              <strong>Cấu trúc & Giải thuật:</strong> Hiểu và vận dụng tốt các
+              kiến thức về tư duy thuật toán, tối ưu hóa chương trình và phân
+              tích tình huống để giải quyết những bài toán mang tính phức tạp và
+              đòi hỏi hiệu suất cao.
+            </li>
+            <li>
+              <strong>Cơ sở dữ liệu:</strong> Biết cách sử dụng và làm việc với
+              các hệ quản trị cơ sở dữ liệu như MySQL, SQL Server, MongoDB. Có
+              khả năng thiết kế, truy vấn và quản lý dữ liệu một cách khoa học
+              và hiệu quả.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Kinh nghiệm & Phát triển</h2>
+          <ul>
+            <li>
+              <strong>Tự học & Phát triển bản thân:</strong> Luôn chủ động tìm
+              hiểu tài liệu qua các nguồn trực tuyến như W3Schools,
+              FreeCodeCamp, Coursera, YouTube… nhằm củng cố kiến thức nền tảng
+              và cập nhật xu hướng công nghệ mới. Có khả năng đọc hiểu tài liệu
+              tiếng Anh để tự nghiên cứu.
+            </li>
+            <li>
+              <strong>Thực hành dự án:</strong> Đã tham gia thực hành triển khai
+              các sản phẩm thực tế trên môi trường thật (hosting, domain). Qua
+              đó hiểu rõ hơn về quy trình vận hành, kiểm thử, tối ưu và bảo trì
+              một ứng dụng sau khi đưa vào sử dụng.
+            </li>
+            <li>
+              <strong>Kỹ năng mềm:</strong> Có tinh thần hợp tác, thích nghi
+              nhanh và làm việc nhóm hiệu quả. Bên cạnh đó, tôi còn rèn luyện kỹ
+              năng giao tiếp, xử lý vấn đề và tổ chức công việc một cách hợp lý
+              trong quá trình học tập và thực hành.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
